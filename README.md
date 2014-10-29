@@ -1,8 +1,6 @@
-[![RelatedCode](http://relatedcode.com/github/header8.png)](http://relatedcode.com)
+## Overview
 
-## OVERVIEW
-
-ProgressHUD is a lightweight and easy-to-use HUD for iOS 8 (written in Objective-C).
+APProgressHUD is a lightweight and easy-to-use HUD for iOS 8 (written in Objective-C).
 
 ![ProgressHUD](http://relatedcode.com/github/progresshud801.png)
 .
@@ -10,17 +8,23 @@ ProgressHUD is a lightweight and easy-to-use HUD for iOS 8 (written in Objective
 .
 ![ProgressHUD](http://relatedcode.com/github/progresshud803.png)
 
-## INSTALLATION
+## Installation
 
-Drag the `ProgressHUD/ProgressHUD` folder into your project.
+### CocoaPods
 
-## REQUIREMENTS
+Add the following to your Podfile:
+
+``` ruby
+pod 'APProgressHUD', '~> 1.0'
+```
+
+## Requirements
 
 - Xcode 6
 - iOS 8
 - ARC
 
-## USAGE
+## Usage
 
 1., Add the following import to the top of the file:
 
@@ -40,26 +44,22 @@ Drag the `ProgressHUD/ProgressHUD` folder into your project.
 [ProgressHUD dismiss];
 ```
 
-## COLOR SHEMES
+## Customisation
 
-Feel free to customize the color settings in `ProgressHUD.h` file.
+You can change the color of the activity indicator using UI appearance selector.
 
-## CREDITS
+```objective-c
+[[UIActivityIndicatorView appearance] setColor:[UIColor orangeColor]];
+```
+
+## Credits
+
+This project is a fork of [ProgressHUD](https://github.com/relatedcode/ProgressHUD).
 
 ProgressHUD was inspired by [SVProgressHUD](https://github.com/samvermette/SVProgressHUD) project.
 
 The success and error icons are from [Glyphish](http://glyphish.com).
 
-## CONTACT
+## License
 
-Do you have any questions or idea? My email is: info@relatedcode.com or you can find some more info at [relatedcode.com](http://relatedcode.com)
-
-## LICENSE
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Source code of this project is available under the standard MIT license. Please see [the license file](LICENSE).
