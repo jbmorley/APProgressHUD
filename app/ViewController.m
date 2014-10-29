@@ -9,7 +9,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ProgressHUD.h"
+#import "APProgressHUD.h"
 
 #import "ViewController.h"
 
@@ -44,6 +44,9 @@
 	[items addObject:@"Success without text"];
 	[items addObject:@"Error with text"];
 	[items addObject:@"Error without text"];
+    
+    [[UIActivityIndicatorView appearance] setColor:[UIColor blueColor]];
+
 }
 
 #pragma mark - Table view data source
@@ -116,14 +119,14 @@
 	{
 		switch (indexPath.row)
 		{
-			case 0: [ProgressHUD dismiss]; break;
-			case 1: [ProgressHUD show:nil]; break;
-			case 2: [ProgressHUD show:@"Please wait..."]; break;
-			case 3: [ProgressHUD show:@"Please wait. We need some more time to work out this situation."]; break;
-			case 4: [ProgressHUD showSuccess:@"That was great!"]; break;
-			case 5: [ProgressHUD showSuccess:nil]; break;
-			case 6: [ProgressHUD showError:@"Something went wrong."]; break;
-			case 7: [ProgressHUD showError:nil]; break;
+			case 0: [APProgressHUD dismiss]; break;
+			case 1: [APProgressHUD show:nil]; break;
+			case 2: [APProgressHUD show:@"Please wait..."]; break;
+			case 3: [APProgressHUD show:@"Please wait. We need some more time to work out this situation."]; break;
+			case 4: [APProgressHUD showSuccess:@"That was great!"]; break;
+			case 5: [APProgressHUD showSuccess:nil]; break;
+			case 6: [APProgressHUD showError:@"Something went wrong."]; break;
+			case 7: [APProgressHUD showError:nil]; break;
 		}
 	}
 }

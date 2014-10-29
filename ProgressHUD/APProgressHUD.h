@@ -12,32 +12,31 @@
 #import <UIKit/UIKit.h>
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-#define HUD_STATUS_FONT			[UIFont boldSystemFontOfSize:16]
+#define HUD_STATUS_FONT			[UIFont systemFontOfSize:16.0f]
 #define HUD_STATUS_COLOR		[UIColor blackColor]
 
-#define HUD_SPINNER_COLOR		[UIColor colorWithRed:185.0/255.0 green:220.0/255.0 blue:47.0/255.0 alpha:1.0]
 #define HUD_BACKGROUND_COLOR	[UIColor colorWithWhite:0 alpha:0.1]
 #define HUD_WINDOW_COLOR		[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2]
 
-#define HUD_IMAGE_SUCCESS		[UIImage imageNamed:@"ProgressHUD.bundle/progresshud-success.png"]
-#define HUD_IMAGE_ERROR			[UIImage imageNamed:@"ProgressHUD.bundle/progresshud-error.png"]
+#define HUD_IMAGE_SUCCESS		[UIImage imageNamed:@"APProgressHUD.bundle/progresshud-success.png"]
+#define HUD_IMAGE_ERROR			[UIImage imageNamed:@"APProgressHUD.bundle/progresshud-error.png"]
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-@interface ProgressHUD : UIView
+@interface APProgressHUD : UIView
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-+ (ProgressHUD *)shared;
++ (APProgressHUD *)shared;
 
 + (void)dismiss;
 
 + (void)show:(NSString *)status;
-+ (void)show:(NSString *)status Interaction:(BOOL)Interaction;
++ (void)show:(NSString *)status interaction:(BOOL)interaction;
 
 + (void)showSuccess:(NSString *)status;
-+ (void)showSuccess:(NSString *)status Interaction:(BOOL)Interaction;
++ (void)showSuccess:(NSString *)status interaction:(BOOL)interaction;
 
 + (void)showError:(NSString *)status;
-+ (void)showError:(NSString *)status Interaction:(BOOL)Interaction;
++ (void)showError:(NSString *)status interaction:(BOOL)interaction;
 
 @property (nonatomic, assign) BOOL interaction;
 

@@ -9,20 +9,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ProgressHUD.h"
+#import "APProgressHUD.h"
 
-@implementation ProgressHUD
+@implementation APProgressHUD
 
 @synthesize interaction, window, background, hud, spinner, image, label;
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-+ (ProgressHUD *)shared
++ (APProgressHUD *)shared
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	static dispatch_once_t once = 0;
-	static ProgressHUD *progressHUD;
+	static APProgressHUD *progressHUD;
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	dispatch_once(&once, ^{ progressHUD = [[ProgressHUD alloc] init]; });
+	dispatch_once(&once, ^{ progressHUD = [[APProgressHUD alloc] init]; });
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return progressHUD;
 }
@@ -43,10 +43,10 @@
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-+ (void)show:(NSString *)status Interaction:(BOOL)Interaction
++ (void)show:(NSString *)status interaction:(BOOL)interaction
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-	[self shared].interaction = Interaction;
+	[self shared].interaction = interaction;
 	[[self shared] hudMake:status image:nil spin:YES hide:NO];
 }
 
@@ -59,10 +59,10 @@
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-+ (void)showSuccess:(NSString *)status Interaction:(BOOL)Interaction
++ (void)showSuccess:(NSString *)status interaction:(BOOL)interaction
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-	[self shared].interaction = Interaction;
+	[self shared].interaction = interaction;
 	[[self shared] hudMake:status image:HUD_IMAGE_SUCCESS spin:NO hide:YES];
 }
 
@@ -75,10 +75,10 @@
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-+ (void)showError:(NSString *)status Interaction:(BOOL)Interaction
++ (void)showError:(NSString *)status interaction:(BOOL)interaction
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-	[self shared].interaction = Interaction;
+	[self shared].interaction = interaction;
 	[[self shared] hudMake:status image:HUD_IMAGE_ERROR spin:NO hide:YES];
 }
 
@@ -152,7 +152,6 @@
 	if (spinner == nil)
 	{
 		spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		spinner.color = HUD_SPINNER_COLOR;
 		spinner.hidesWhenStopped = YES;
 	}
 	if (spinner.superview == nil) [hud addSubview:spinner];

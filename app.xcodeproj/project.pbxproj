@@ -13,8 +13,8 @@
 		292BA69419E7F62000D0F6C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292BA69219E7F62000D0F6C8 /* LaunchScreen.xib */; };
 		292BA6AC19E7F69E00D0F6C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292BA6AA19E7F69E00D0F6C8 /* ViewController.m */; };
 		292BA6AD19E7F69E00D0F6C8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292BA6AB19E7F69E00D0F6C8 /* ViewController.xib */; };
-		292BA6B219E7F6A800D0F6C8 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 292BA6AF19E7F6A800D0F6C8 /* ProgressHUD.bundle */; };
-		292BA6B319E7F6A800D0F6C8 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 292BA6B119E7F6A800D0F6C8 /* ProgressHUD.m */; };
+		292BA6B219E7F6A800D0F6C8 /* APProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 292BA6AF19E7F6A800D0F6C8 /* APProgressHUD.bundle */; };
+		292BA6B319E7F6A800D0F6C8 /* APProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 292BA6B119E7F6A800D0F6C8 /* APProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +28,9 @@
 		292BA6A919E7F69E00D0F6C8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		292BA6AA19E7F69E00D0F6C8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		292BA6AB19E7F69E00D0F6C8 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		292BA6AF19E7F6A800D0F6C8 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
-		292BA6B019E7F6A800D0F6C8 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
-		292BA6B119E7F6A800D0F6C8 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		292BA6AF19E7F6A800D0F6C8 /* APProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = APProgressHUD.bundle; sourceTree = "<group>"; };
+		292BA6B019E7F6A800D0F6C8 /* APProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APProgressHUD.h; sourceTree = "<group>"; };
+		292BA6B119E7F6A800D0F6C8 /* APProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 		292BA67719E7F62000D0F6C8 = {
 			isa = PBXGroup;
 			children = (
-				292BA6AE19E7F6A800D0F6C8 /* ProgressHUD */,
+				292BA6AE19E7F6A800D0F6C8 /* APProgressHUD */,
 				292BA68219E7F62000D0F6C8 /* app */,
 				292BA68119E7F62000D0F6C8 /* Products */,
 			);
@@ -85,13 +85,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		292BA6AE19E7F6A800D0F6C8 /* ProgressHUD */ = {
+		292BA6AE19E7F6A800D0F6C8 /* APProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				292BA6AF19E7F6A800D0F6C8 /* ProgressHUD.bundle */,
-				292BA6B019E7F6A800D0F6C8 /* ProgressHUD.h */,
-				292BA6B119E7F6A800D0F6C8 /* ProgressHUD.m */,
+				292BA6AF19E7F6A800D0F6C8 /* APProgressHUD.bundle */,
+				292BA6B019E7F6A800D0F6C8 /* APProgressHUD.h */,
+				292BA6B119E7F6A800D0F6C8 /* APProgressHUD.m */,
 			);
+			name = APProgressHUD;
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -154,7 +155,7 @@
 			files = (
 				292BA69419E7F62000D0F6C8 /* LaunchScreen.xib in Resources */,
 				292BA69119E7F62000D0F6C8 /* Images.xcassets in Resources */,
-				292BA6B219E7F6A800D0F6C8 /* ProgressHUD.bundle in Resources */,
+				292BA6B219E7F6A800D0F6C8 /* APProgressHUD.bundle in Resources */,
 				292BA6AD19E7F69E00D0F6C8 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +169,7 @@
 			files = (
 				292BA68919E7F62000D0F6C8 /* AppDelegate.m in Sources */,
 				292BA6AC19E7F69E00D0F6C8 /* ViewController.m in Sources */,
-				292BA6B319E7F6A800D0F6C8 /* ProgressHUD.m in Sources */,
+				292BA6B319E7F6A800D0F6C8 /* APProgressHUD.m in Sources */,
 				292BA68619E7F62000D0F6C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
