@@ -92,8 +92,7 @@
 				292BA6B019E7F6A800D0F6C8 /* APProgressHUD.h */,
 				292BA6B119E7F6A800D0F6C8 /* APProgressHUD.m */,
 			);
-			name = APProgressHUD;
-			path = ProgressHUD;
+			path = APProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

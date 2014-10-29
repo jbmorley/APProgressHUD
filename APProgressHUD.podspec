@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.platform     	 = :ios, '7.0'
   s.requires_arc 	 = true
   s.source_files 	 = 'APProgressHUD/*.{h,m}'
-  s.resource_bundles = {'APProgressHUDImages' => ['APProgressHUD/Images.xcassets']}
+  s.resource_bundles = {'APProgressHUDImages' => ['APProgressHUD/APProgressHUD.bundle']}
 end
