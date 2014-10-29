@@ -29,19 +29,31 @@ pod 'APProgressHUD', '~> 1.0'
 1., Add the following import to the top of the file:
 
 ```objective-c
-#import "ProgressHUD.h"
+#import "APProgressHUD.h"
 ```
 
 2., Use the following to display the HUD:
 
 ```objective-c
-[ProgressHUD show:@"Please wait..."];
+[APProgressHUD show:@"Please wait..."];
 ```
 
 3., Simply dismiss after complete your task:
 
 ```objective-c
-[ProgressHUD dismiss];
+[APProgressHUD dismiss];
+```
+
+4., To show a success momentarily:
+
+```objective-c
+[APProgressHUD showSuccess:@"Congratulations!"];
+```
+
+5., To show an error momentarily:
+
+```objective-c
+[APProgressHUD showError:@"Something went wrong"];
 ```
 
 ## Customisation
