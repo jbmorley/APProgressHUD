@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         	 = "APProgressHUD"
-  s.version      	 = "1.0.0"
+  s.version      	 = "1.0.1"
   s.summary      	 = "APProgressHUD is a lightweight and easy-to-use HUD for iOS 8. (Objective-C)"
   s.homepage     	 = "https://github.com/antonyharfield/APProgressHUD"
   s.license      	 = { :type => 'MIT', :file => 'LICENSE' }
@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.platform     	 = :ios, '7.0'
   s.requires_arc 	 = true
   s.source_files 	 = 'APProgressHUD/*.{h,m}'
-  s.resource_bundles = {'APProgressHUDImages' => ['APProgressHUD/APProgressHUD.bundle']}
+  s.resource 		 = 'APProgressHUD/APProgressHUD.bundle'
 end
