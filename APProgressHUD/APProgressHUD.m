@@ -224,6 +224,9 @@
             hudWidth = textLabelRect.size.width + 24;
             statusLabelRect = CGRectMake(textLabelRect.origin.x, statusLabelRect.origin.y, textLabelRect.size.width, statusLabelRect.size.height);
         }
+        else {
+            textLabelRect.size.width = statusLabelRect.size.width;
+        }
         
         hudHeight = hudHeight + textLabelRect.size.height + 6;
     }

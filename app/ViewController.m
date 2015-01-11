@@ -13,25 +13,19 @@
 
 #import "ViewController.h"
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-@interface ViewController()
-{
+@interface ViewController() {
 	NSMutableArray *items;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *cellText;
 
 @end
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 
 @implementation ViewController
 
 @synthesize cellText;
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (void)viewDidLoad
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (void)viewDidLoad {
 	[super viewDidLoad];
 	self.title = @"Related Code";
 
@@ -44,6 +38,7 @@
 	[items addObject:@"Success with status"];
 	[items addObject:@"Success without status"];
     [items addObject:@"Success with status and text"];
+    [items addObject:@"Success with status and text 2"];
 	[items addObject:@"Error with status"];
 	[items addObject:@"Error without status"];
     
@@ -53,33 +48,21 @@
 
 #pragma mark - Table view data source
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 2;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 0) return 2;
 	if (section == 1) return [items count];
 	return 0;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 44;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0)
 	{
 		if (indexPath.row == 0) return cellText;
@@ -92,10 +75,7 @@
 	return nil;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (UITableViewCell *)tableView:(UITableView *)tableView cellWithText:(NSString *)text
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellWithText:(NSString *)text {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 	if (cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 	cell.textLabel.text = text;
@@ -104,10 +84,7 @@
 
 #pragma mark - Table view delegate
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 	if (indexPath.section == 0)
@@ -129,8 +106,9 @@
 			case 5: [APProgressHUD showSuccess:@"That was great!"]; break;
 			case 6: [APProgressHUD showSuccess:nil]; break;
             case 7: [APProgressHUD showSuccess:@"Success" text:@"You just won a Macbook"]; break;
-			case 8: [APProgressHUD showError:@"Something went wrong."]; break;
-			case 9: [APProgressHUD showError:nil]; break;
+            case 8: [APProgressHUD showSuccess:@"Congratulations!" text:@"Super"]; break;
+			case 9: [APProgressHUD showError:@"Something went wrong."]; break;
+			case 10: [APProgressHUD showError:nil]; break;
 		}
 	}
 }
