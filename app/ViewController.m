@@ -37,13 +37,15 @@
 
 	items = [[NSMutableArray alloc] init];
 	[items addObject:@"Dismiss HUD"];
-	[items addObject:@"No text"];
-	[items addObject:@"Some text"];
-	[items addObject:@"Long text"];
-	[items addObject:@"Success with text"];
-	[items addObject:@"Success without text"];
-	[items addObject:@"Error with text"];
-	[items addObject:@"Error without text"];
+	[items addObject:@"No status"];
+	[items addObject:@"Some status"];
+	[items addObject:@"Long status"];
+    [items addObject:@"Status and text"];
+	[items addObject:@"Success with status"];
+	[items addObject:@"Success without status"];
+    [items addObject:@"Success with status and text"];
+	[items addObject:@"Error with status"];
+	[items addObject:@"Error without status"];
     
     [[UIActivityIndicatorView appearance] setColor:[UIColor blueColor]];
 
@@ -123,10 +125,12 @@
 			case 1: [APProgressHUD show:nil]; break;
 			case 2: [APProgressHUD show:@"Please wait..."]; break;
 			case 3: [APProgressHUD show:@"Please wait. We need some more time to work out this situation."]; break;
-			case 4: [APProgressHUD showSuccess:@"That was great!"]; break;
-			case 5: [APProgressHUD showSuccess:nil]; break;
-			case 6: [APProgressHUD showError:@"Something went wrong."]; break;
-			case 7: [APProgressHUD showError:nil]; break;
+            case 4: [APProgressHUD show:@"Please wait..." text:@"Finding your stuff"]; break;
+			case 5: [APProgressHUD showSuccess:@"That was great!"]; break;
+			case 6: [APProgressHUD showSuccess:nil]; break;
+            case 7: [APProgressHUD showSuccess:@"Success" text:@"You just won a Macbook"]; break;
+			case 8: [APProgressHUD showError:@"Something went wrong."]; break;
+			case 9: [APProgressHUD showError:nil]; break;
 		}
 	}
 }
