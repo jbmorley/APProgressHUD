@@ -226,6 +226,7 @@
         }
         else {
             textLabelRect.size.width = statusLabelRect.size.width;
+            textLabelRect.origin.x = statusLabelRect.origin.x;
         }
         
         hudHeight = hudHeight + textLabelRect.size.height + 6;
