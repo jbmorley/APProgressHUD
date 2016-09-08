@@ -22,7 +22,7 @@
 
 #define HUD_IMAGE_SUCCESS		[UIImage imageNamed:@"APProgressHUD.bundle/progresshud-success.png"]
 #define HUD_IMAGE_ERROR			[UIImage imageNamed:@"APProgressHUD.bundle/progresshud-error.png"]
-#define HUD_TIMED_DELAY 3.0f
+#define HUD_TIMED_DELAY 0.5f
 
 @interface APProgressHUD : UIView
 
@@ -41,6 +41,8 @@
 + (void)showError:(NSString *)status;
 + (void)showError:(NSString *)status text:(NSString *)text;
 + (void)showError:(NSString *)status interaction:(BOOL)interaction;
+
++ (void)showImage:(UIImage *)image completionBlock:(void (^)(void))completionBlock;
 
 @property (nonatomic, assign) BOOL interaction;
 

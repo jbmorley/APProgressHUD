@@ -11,6 +11,12 @@
 
 #import "APProgressHUD.h"
 
+@interface APProgressHUD ()
+
+@property (nonatomic, strong, readwrite) void (^completionBlock)(void);
+
+@end
+
 @implementation APProgressHUD
 
 @synthesize interaction, window, background, hud, spinner, image, statusLabel, textLabel;
@@ -58,6 +64,11 @@
 	[[self shared] hudMake:status image:HUD_IMAGE_SUCCESS spin:NO hide:YES text:nil];
 }
 
++ (void)showImage:(UIImage *)image completionBlock:(void (^)(void))completionBlock
+{
+    [[self shared] hudMake:nil image:image spin:NO hide:YES text:nil completionBlock:completionBlock];
+}
+
 + (void)showError:(NSString *)status {
 	[self shared].interaction = YES;
 	[[self shared] hudMake:status image:HUD_IMAGE_ERROR spin:NO hide:YES text:nil];
@@ -86,6 +97,10 @@
 }
 
 - (void)hudMake:(NSString *)status image:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide text:(NSString *)text {
+    [self hudMake:status image:image spin:spin hide:hide text:text completionBlock:nil];
+}
+
+- (void)hudMake:(NSString *)status image:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide text:(NSString *)text completionBlock:(void (^)(void))completionBlock {
     
 	[self hudCreate];
     
@@ -99,6 +114,8 @@
 	image.hidden = (img == nil) ? YES : NO;
     
 	if (spin) [spinner startAnimating]; else [spinner stopAnimating];
+
+    self.completionBlock = completionBlock;
 
     [self hudSize];
 	[self hudPosition:nil];
@@ -140,7 +157,7 @@
 
     if (image == nil)
 	{
-		image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
+		image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
 	}
 	if (image.superview == nil) [hud addSubview:image];
 
@@ -320,12 +337,16 @@
 	if (self.alpha == 1) {
 		NSUInteger options = UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseIn;
 		[UIView animateWithDuration:0.15 delay:0 options:options animations:^{
-			hud.transform = CGAffineTransformScale(hud.transform, 0.7, 0.7);
+			hud.transform = CGAffineTransformScale(hud.transform, 1.4, 1.4);
 			hud.alpha = 0;
 		}
 		completion:^(BOOL finished) {
 			[self hudDestroy];
 			self.alpha = 0;
+            if (self.completionBlock) {
+                self.completionBlock();
+                self.completionBlock = nil;
+            }
 		}];
 	}
 }
