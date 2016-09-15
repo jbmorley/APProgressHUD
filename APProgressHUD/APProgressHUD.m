@@ -97,7 +97,7 @@
 }
 
 - (void)hudMake:(NSString *)status image:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide text:(NSString *)text {
-    [self hudMake:status image:image spin:spin hide:hide text:text completionBlock:nil];
+    [self hudMake:status image:img spin:spin hide:hide text:text completionBlock:nil];
 }
 
 - (void)hudMake:(NSString *)status image:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide text:(NSString *)text completionBlock:(void (^)(void))completionBlock {
